@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Mask 예제</title>
+    <style>
+        .masked {
+            width: 300px;
+            height: 300px;
+            background: url('pig.png') no-repeat;
+            background-size: contain;
+            mask-image: url('search.png');
+            mask-repeat: no-repeat;
+            mask-position: center;
+            animation: moveMask 10s infinite linear;
+        }
+
+        @keyframes moveMask {
+            0% {
+                mask-position: left top;
+            }
+            25% {
+                mask-position: right top;
+            }
+            50% {
+                mask-position: right bottom;
+            }
+            75% {
+                mask-position: left bottom;
+            }
+            100% {
+                mask-position: left top;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="masked"></div>
+</body>
+</html>
